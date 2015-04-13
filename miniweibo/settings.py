@@ -1,3 +1,4 @@
+#! -*- coding: utf-8 -*-
 """
 Django settings for miniweibo project.
 
@@ -36,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	#添加个人app
+	'account',
+	'login',
 	'timeline',
 )
 
