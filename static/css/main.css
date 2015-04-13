@@ -1,8 +1,6 @@
 #siderbar{
-    margin-top: 25px;
     float: left;
 }
-
-#mainbody{
+#content{
     float: right;
 }
