@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<!--确保适当的绘制和触屏缩放*/-->
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="../../static/css/bootstrap-theme.min.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="../../static/js/jquery-1.11.2.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../../static/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$(".perReg").click(function(){
+$(".moile_register").show();
+$(".mail_register").hide();
+});
+$(".perReg1").click(function(){
+
+$(".moile_register").hide();
+$(".mail_register").show();
+});
+});
+</script>
+<style>
+.div1,div2{
+width:1150px;
+height:70px;
+padding: 24px 0 22px 40px;
+float:left;
+}
+.perReg,.perReg1{
+color: black;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 33px;
+}
+.tit {
+    float: left;
+    line-height: 30px;
+    text-align: right;
+	width:100px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<img src="../static/img/logo.jpg"/>
+  <div class="div1"><a class="perReg" >手机注册</a>
+  <span class="vline">|</span>
+  <a class="perReg1" >邮箱注册</a>
+  </div></br>
+<div style="display:none" class="moile_register">
+     <div class="tit">
+     <img src="../static/img/mobile.jpg"/>
+     <i>*</i>
+     手机：
+	 </div>
+	 <div>
+	 <p><input type="text" placeholder="0086请输入你的手机号码" style="width:300px"/>
+	 请输入你的手机号码
+	 </p>
+     </div></br>
+     <div class="tit">
+     <i>*</i>
+     设置密码：</div>
+	 <div>
+	 <p><input type="text"  style="width:300px"/>请输入密码</p>
+     </div><br/>
+	 <div class="tit">
+     <i>*</i>
+     激活码：
+	 </div>
+	 <div><button type="button" class="btn btn-default">免费获得短信激活码</button><input type="text" />
+	 </div><br/>
+	 <div></div>
+	 <div class="tit"></div>
+	 <div><button type="button" class="btn btn-warning" style="width:300px;">立即注册</button>
+	 </div>
+</div>  
+<div class="mail_register">
+    <form method="post" action="/account/userregister/">
+     <div class="tit">
+     <img src="../static/img/mobile.jpg"/>
+     <i>*</i>
+     邮箱：
+	 </div>
+	 <div>
+	 <p><input type="text" placeholder="请输入你的邮箱地址" style="width:300px" name="username" value=""/>
+	 请输入你的邮箱地址
+	 </p>
+     </div></br>
+     <div class="tit">
+     <i>*</i>
+     设置密码：</div>
+	 <div>
+	 <p><input type="password"  style="width:300px" name="password" value=""/>请输入密码</p>
+     </div><br/>
+
+	 <div></div>
+	 <div class="tit"></div>
+	 <div><button type="submit" class="btn btn-warning" style="width:300px;">立即注册</button>
+	 </div>
+    </form>
+</div>  
+</div>
+</body>
+</html>

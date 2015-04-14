@@ -4,7 +4,6 @@ from django.db import models
 # Create your models here.
 
 class UserProfile(models.Model):
-	userid = models.IntegerField(primary_key=True,auto_created=True)#用户id
 	username = models.CharField(max_length=32)#用户名
 	password = models.CharField(max_length=32)#密码
 	tel = models.CharField(max_length=15)#手机

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<!--确保适当的绘制和触屏缩放*/-->
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+var num=250;
+var pattern="你还可以输入"+num+"字";
+$('.contentwordage').html(pattern);
+$('.content').keyup(
+    function(){
+        var remain = $(this).val().length;
+        if(remain > 250){
+                pattern = "字数超过限制！";
+				stop();
+            }
+			else{
+                var result = num - remain;
+                pattern = '还可以输入' + result + '字符';
+            }
+            $('.contentwordage').html(pattern);
+        });
+		});
+</script>
+
+<style>
+.total{
+background: url("/static/resources/img/navListBg.gif") repeat-y scroll 0 0 #ffffff;
+    margin: 0 auto;
+    padding-top: 50px;
+    position: relative;
+    width: 1004px;
+	height:1000px;
+	border:2px solid silver;
+}
+.sendweibo{
+width:300px;
+height:200px;
+border:1px solid silver;
+float:left; 
+margin-left:20px
+}
+.fresh{
+width:600px;
+//height:200px;
+border:1px solid silver;
+margin-left:20px;
+float:left;
+margin-bottom:20px;
+}
+.fudong{
+float:right;
+margin-bottom:3px;
+margin-right:5px;
+}
+</style>
+
+
+</head>
+<body>
+<!--导航部分-->
+<div id="TopNavBar" class="container">
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">主页</a></li>
+  <li role="presentation"><a href="#">个人</a></li>
+  <li role="presentation"><a href="#">信息</a></li>
+  <li role="presentation"><a href="#">统计中心</a></li>
+  <li role="presentation"><a href="#">设置</a></li>
+</ul>
+</div>
+<div class="container" class="total">
+  <div>
+     <div style="width:150px;height:500px;float:left">
+     <h4><a href="#"><span>首页</span><a></h4>
+     <h4><a href="#"><span>消息</span><a></h4>
+     <h4><a href="#"><span>收藏</span><a></h4>
+	 <hr>
+	 <h4>好友圈<span class="badge">42</span></h4>
+	 <h4>群微博</h4>
+	 <h4>特别关注</h4>
+	 <h4>幽默搞笑</h4>
+     </div>
+     <div class="fresh">
+        <div>有什么新鲜事要告诉大家?
+		</div>
+		<div class="fudong contentwordage"><p class="num"></p></div>
+		<br/>
+		<div>
+		<textarea class="form-control content" rows="3"></textarea>
+		</div></br>
+		<div>
+		<div>
+		<a class="glyphicon glyphicon-certificate">表情</a>
+		<a class="glyphicon glyphicon-picture">图片</a>
+		<a class="glyphicon glyphicon-facetime-video">视频</a>
+		<a class="glyphicon glyphicon-comment">话题</a>
+		<a class="glyphicon glyphicon-file">长微博</a>
+		</div>
+		<div class="fudong"><button type="button" class="btn btn-danger">发布</button></div>
+		</div>
+	 </div>
+	 <div class="sendweibo">
+	 <img src="touxiang.jpg" style="width:300px"/>
+	     <div>
+          <center><a title="ljzijin1992" 
+            bpfilter="page_frame">ljzijin1992</a><br/>
+			<a>
+			<strong type="follow">68</strong>
+			</a>
+			</center>
+			
+	     </div>
+    </div>
+	 
+	 <div class="panel panel-default fresh">
+         <div class="panel-heading">
+            <h3 class="panel-title">精彩微博推荐</h3>
+         </div>
+         <div class="panel-body">
+          Panel content
+		  <nav>
+		     <ul style="margin-bottom:10px;border:1px solid silver" class="pagination pagination-lg">
+			 <li><a href="#">收藏</a></li>
+			 <li><a href="#">转发</a></li>
+			 <li><a href="#">评论</a></li>
+			 <li ><a href="#"class="glyphicon glyphicon-thumbs-up">点赞</a></li>
+		     </ul>
+			</nav>
+         </div>
+		 
+     </div>
+	 
+     <div class="sendweibo">
+	 <p>可能感兴趣的人<span class="glyphicon glyphicon-refresh fudong">换一换</span></p>
+     </div>
+	 <div class="panel panel-default fresh"style="display:">
+             <div class="panel-heading">
+             <h3 class="panel-title">转发微博<button class="close" type="button">×</button></h3>
+             </div>
+         <div class="panel-body">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+			       <span class="pull-left">转发到：</span>
+                   <li class="active"><a href="#">我的微博</a></li>
+				   <li ><a href="#" class="glyphicon glyphicon-heart">朋友圈 </a></li>
+				   <li class=""><a href="#">发私信 </a></li>
+                   
+		   </ul>
+		   </div>
+		   <div>
+		       <textarea class="form-control content" rows="3"></textarea>
+		    </div></br>
+			<div class="checkbox">
+             <label>
+              <input type="checkbox" value="">
+              同时评论给 
+             </label>
+			 <span class="dropdown">
+               <button class="btn btn-default dropdown-toggle pull-right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                公开
+               <span class="caret"></span>
+               </button>
+               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">公开</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">仅好友可见</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">仅自己可见</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">群可见</a></li>
+               </ul>
+             </span>
+			 
+			 
+			 
+			 <span><button type="button" class="btn btn-danger pull-right">转发</button></span>
+         </div>
+		  </div>
+		  
+     </div>
+
+  </div>
+</div>
+
+</body
+
+</html>

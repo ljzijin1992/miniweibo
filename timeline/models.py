@@ -18,3 +18,7 @@ class Comment(models.Model):
 
 	class Meta(object):
 		db_table = "timeline_comment"
+
+class addLike(models.Model):
+	timeline = models.OneToOneField(Timeline)
+	likenum = models.IntegerField(default=0)

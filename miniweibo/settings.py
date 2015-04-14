@@ -61,8 +61,14 @@ WSGI_APPLICATION = 'miniweibo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'miniweibo',
+		'USER':'atom',
+		'PASSWORD':'atom',
+        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        'CONN_MAX_AGE': 100
+
     }
 }
 
